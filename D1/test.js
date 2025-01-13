@@ -234,19 +234,58 @@ while (prima <= n) {
 /** Soal 10 : For loop
  * buat looping untuk menghasilkan nilai rata-rata dari sebuah array bilangan bulat menggunakan function
  */
+console.log("==================");
 const dataBilanganBulat = [2, 4, 6, 8, 10];
+
+function rataRata(dataBilanganBulat) {
+    let total = 0;
+    for (let i = 0; i < dataBilanganBulat.length; i++) {
+        total += dataBilanganBulat[i];
+    }
+    return total / dataBilanganBulat.length;
+}
+console.log("Rata-rata data bilangan bulat", rataRata(dataBilanganBulat));
+
 
 /** Soal 11 : For loop
  * buat function untuk menghitung jumlah huruf kapitalpada sebuah string menggunakan function
  */
+console.log("==================");
 let string1 = "Hello World";
 let string2 = "Kiw, Gimana Kabarnya";
 let string3 = "JAVaScRipT";
 
+function hitungKapital(string) {
+    let count = 0;
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] == string [i].toUpperCase()) {
+            count++;
+        }
+    }
+    return count;
+}
+console.log(hitungKapital(string1));
+console.log(hitungKapital(string2));
+console.log(hitungKapital(string3));
+
+
 /** Soal 12 : For loop
  * buat fungsi untuk mencari nilai tertinggi dari sebuah array
  */
+console.log("==================");
 const nilaiTertinggi = [1, 34, 21, 54, 6567, 234, 65865, 98764, 23, 453];
+
+function nilaiMaksimal(nilaiTertinggi) {
+    let maksimal = nilaiTertinggi[0];
+    let nomor = 0;
+    for (let i = 0; i < nilaiTertinggi.length; i++) {
+        nomor = nilaiTertinggi[i];
+        maksimal = Math.max(maksimal, nomor);
+    }
+    return maksimal;
+}
+console.log(nilaiMaksimal(nilaiTertinggi));
+
 
 /** Soal 13 : for
  * buat fungsi untuk membuat piramid(segitiga sama kaki) yang terbuat dari bintang "*"
