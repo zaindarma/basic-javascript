@@ -1,3 +1,4 @@
+
 // ARRAY MANIPULATION
 console.log("=======================================");
 
@@ -41,20 +42,14 @@ const employee = [
 
 /** Cari karyawan yang punya hobi "menulis" dan usianya diatas 25 tahun (pake find dan include) */
 console.log("=======================================");
-const findEmployee = employee.find((data) => {
-    return data.hobby.includes("Menulis") && data.age > 25;
-});
+const findEmployee = employee.find((data) => data.hobby.includes("Menulis") && data.age > 25);
 console.log("Karyawan Hobi Menulis diatas 25 Tahun : ", findEmployee);
 
 /** Tampilkan data karyawan yang bekerja sebagai "backend" dan punya gaji lebih dari 3jt (.filter dan .some) */
 console.log("=======================================");
-const filterEmployee = employee
-.filter((data) => {
-    return (
-        data.jobDesk.some((item) => item.title === "backend") &&
-        data.jobDesk.filter((item) => item.salary === 3000000)
-    )
-});
+const filterEmployee = employee.filter(
+    (data) => (data.jobDesk.some((item) => item.title === "backend" && item.salary > 3000000))
+);
 console.log("Karyawan backend gaji lebih dari 3 juta : ", filterEmployee);
 
 /** Tampilkan nama karyawan yang punya satu hobby pake .filter, .map, .length */
@@ -71,20 +66,35 @@ console.log("Karyawan dengan satu hobby : ", satuHobby);
 /** Cari nama karyawan yang posisinya "frontend" dengan gaji tertinggi, lalu return nama karyawannya (pake .filter, .some, .reduce, .find) */
 // employee.filter(blablabla.some === FE) .reduce((max, min) => blablabla.find(blablabla.salary) logic bandingin gaji )
 console.log("=======================================");
-const gajiFrontendTertinggi = employee
-.filter((data) => {
-    return data.jobDesk.some((item) => item.title === "frontend")
+// const gajiFrontendTertinggi = employee
+// .filter((data) => {
+//     return data.jobDesk.some((item) => item.title === "frontend")
+// })
+// .reduce((acc, curr) => {
+//     const a = curr.jobDesk.map((job) => job.salary)[0];   
+//     return acc > a ? acc : a;
+// }, 0);
+
+// const frontEnd = employee
+// .find((data) => 
+//     data.jobDesk.some((item) => item.salary == gajiFrontendTertinggi)).nama;
+
+// console.log("Karyawan Frontend dengan gaji tertinggi : ", frontEnd);
+
+const findHighestFrontend = employee
+.filter((item) => item.jobDesk.some((job) => job.title === "frontend"))
+.reduce((highest, current) => {
+    const currentSalary = current.jobDesk.find((job) => job.title === "frontend").salary;
+    const highestSalary = current.jobDesk.find((job) => job.title === "frontend").salary;
+    
+    console.log(highestSalary);
+    console.log(currentSalary);
+
+    return currentSalary > highestSalary ? current : highest;
 })
-.reduce((acc, curr) => {
-    const a = curr.jobDesk.map((job) => job.salary)[0];   
-    return acc > a ? acc : a;
-}, 0);
+console.log("Frontend gaji tertinggi : ", findHighestFrontend.nama);
 
-const frontEnd = employee
-.find((data) => 
-    data.jobDesk.some((item) => item.salary == gajiFrontendTertinggi)).nama;
-
-console.log("Karyawan Frontend dengan gaji tertinggi : ", frontEnd);
+// Fungsi
 
 // MATH
 /** Cari nilai tertinggi dari 3 siswa menggunakan Math Object */
@@ -125,9 +135,16 @@ console.log("Total Gaji : ", totalSemuaGaji);
 console.log("Total Gaji Setelah Dipotong Pajak : ", Math.floor(sisaGaji));
 
 /** Tampilkan semua karyawan yang memiliki hobi terbanyak pake map, math.max, filter & length */
-console.log("=======================================");
-const hobbyTerbanyak = Math.max(...employee.map((item) => item.hobby.length));
-const karyawanHobiBanyak = employee
-.filter((data) => data.hobby.length === hobbyTerbanyak)
-.map((item) => item.nama);
-console.log("Karyawan dengan hobi terbanyak : ", karyawanHobiBanyak);
+// console.log("=======================================");
+// const hobbyTerbanyak = Math.max(...employee.map((item) => item.hobby.length));
+// const karyawanHobiBanyak = employee
+// .filter((data) => data.hobby.length === hobbyTerbanyak)
+// .map((item) => item.nama);
+// console.log("Karyawan dengan hobi terbanyak : ", karyawanHobiBanyak);
+
+const jumlahHobi = employee.map((emp) => emp.hobby.length);
+const maxHobi = Math.max(...jumlahHobi);
+const karyawanTerbanyakHobi = employee.filter((emp) => emp.hobby.length === maxHobi);
+
+const result = karyawanTerbanyakHobi.map((emp) => emp.nama).join(", ");
+console.log("Karyawan dengan hobi terbanyak : ", result);

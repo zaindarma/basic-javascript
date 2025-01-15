@@ -55,10 +55,10 @@ console.log(findUserHobby(user2));
  * Jika angka yang dimasukkan diluar rentang tersebut, maka tampilkan pesan "Input tidak valid"
  */
 console.log("==================");
-let namaHari = 2;
+let namaHari = 2; // Nilai input yang akan dikirim ke switch case
 
 switch (namaHari) {
-    case 1:
+    case 1: // Kondisi
         {
             console.log("Monday");
             break;
@@ -71,7 +71,7 @@ switch (namaHari) {
     case 3:
         {
             console.log("Wednesday");
-            break;
+            break; // Menghentikan eksekusi ketika kondisi terpenuhi
         }
     case 4:
         {
@@ -94,7 +94,7 @@ switch (namaHari) {
             break;
         }
 
-    default:
+    default: // Kondisi jika tidak ada case yang terpenuhi/semua case tidak terpenuhi
         {
             console.log("input tidak valid");
             break;

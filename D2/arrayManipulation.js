@@ -1,6 +1,6 @@
 // Penjelasam array secara detail
 
-let myArray = [1,2,3,4,5]
+let myArray = [1, 2, 3, 4, 5]
 
 // Cara akses data dalam array berdasarkan indesknya
 let nilaiPertama = myArray[0];
@@ -53,10 +53,10 @@ console.log("Reverse : ", myArray);
 let nilaiCari = 3;
 let indeksNilai = myArray.indexOf(nilaiCari);
 
-if(indeksNilai !== -1){
+if (indeksNilai !== -1) {
     console.log(`Nilai ${nilaiCari} ditemukan pada indeks : ${indeksNilai}`);
-} else{
-    console.log(`Nilai ${nilaiCari} tidak ditemukan dalam array`);   
+} else {
+    console.log(`Nilai ${nilaiCari} tidak ditemukan dalam array`);
 }
 
 // .concat : method array untuk ngegabungin 2 array
@@ -86,14 +86,24 @@ console.log("toLocaleString : ", arrayToLocaleString);
 const sum = myArray.reduce((accumulator, currentValue) => {
     console.log(accumulator);
     console.log(currentValue);
-    
+
     return accumulator + currentValue;
 }, 0);
 console.log("Reduce : ", sum);
 
+// Contoh lain reduce
+const dataNilai = [{ sekolah: "sekolah A", nilai: [40, 50, 60, 70, 90, 50] }]
+console.log(
+    dataNilai[0].nilai.reduce((prevValue, NextValue) => {
+        console.log("1", prevValue);
+        console.log("2", NextValue);
+        return prevValue + NextValue;
+    })
+);
+
+
 // Manipulasi data of Array Object
-const dataSiswa = [
-    {
+const dataSiswa = [{
         id: 1,
         name: "Zain",
         age: 22,
@@ -126,7 +136,7 @@ const forEachDataSiswa = dataSiswa.forEach((data) => {
 
 // .map : method array untuk ngubah setiap elemen array menjadi nilai baru atau mapping data tertentu
 const getNameFromDataSiswa = dataSiswa.map((item) => {
-    return {nama: item.name, umur: item.age};
+    return { nama: item.name, umur: item.age };
     // return item.name (manggil mapping normal)
 });
 console.log("Mapping data nama : ", getNameFromDataSiswa);
