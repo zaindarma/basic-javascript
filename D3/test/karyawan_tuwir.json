@@ -1,0 +1,90 @@
+[
+  {
+    "id": 3,
+    "nama": "Dina",
+    "age": 27,
+    "jobDesk": [
+      {
+        "title": "frontend",
+        "salary": 3000000
+      }
+    ],
+    "hobby": [
+      "Membaca"
+    ]
+  },
+  {
+    "id": 5,
+    "nama": "Dian",
+    "age": 27,
+    "jobDesk": [
+      {
+        "title": "frontend",
+        "salary": 8000000
+      }
+    ],
+    "hobby": [
+      "Membaca"
+    ]
+  },
+  {
+    "id": 6,
+    "nama": "Darma",
+    "age": 27,
+    "jobDesk": [
+      {
+        "title": "frontend",
+        "salary": 11000000
+      }
+    ],
+    "hobby": [
+      "Memukul",
+      "Melukis"
+    ]
+  },
+  {
+    "id": 6,
+    "nama": "Darma",
+    "age": 27,
+    "jobDesk": [
+      {
+        "title": "frontend",
+        "salary": 11000000
+      }
+    ],
+    "hobby": [
+      "Memukul",
+      "Melukis"
+    ]
+  },
+  {
+    "id": 6,
+    "nama": "Darma",
+    "age": 27,
+    "jobDesk": [
+      {
+        "title": "frontend",
+        "salary": 11000000
+      }
+    ],
+    "hobby": [
+      "Memukul",
+      "Melukis"
+    ]
+  },
+  {
+    "id": 6,
+    "nama": "Darma",
+    "age": 27,
+    "jobDesk": [
+      {
+        "title": "frontend",
+        "salary": 11000000
+      }
+    ],
+    "hobby": [
+      "Memukul",
+      "Melukis"
+    ]
+  }
+]
